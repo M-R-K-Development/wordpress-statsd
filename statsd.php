@@ -89,18 +89,18 @@ class WordPress_StatsD
         add_action( 'init', array(&$this, 'user_count') ); //multisite aware
 
         //http request timing
-        add_filter( 'pre_http_request', array(&$this, 'pre_http'), 10, 3 );
-        add_action( 'http_api_debug', array(&$this, 'post_http'), 10, 5 );
+        // add_filter( 'pre_http_request', array(&$this, 'pre_http'), 10, 3 );
+        // add_action( 'http_api_debug', array(&$this, 'post_http'), 10, 5 );
 
         //wpdb
-        add_action( 'shutdown', array(&$this, 'num_queries') );
+        // add_action( 'shutdown', array(&$this, 'num_queries') );
 
-        add_action( 'shutdown', array(&$this, 'load_time') );
+        // add_action( 'shutdown', array(&$this, 'load_time') );
 
-        add_action( 'xmlrpc_call', array(&$this, 'xmlrpc_call') );
+        // add_action( 'xmlrpc_call', array(&$this, 'xmlrpc_call') );
 
         //trac wp cron
-        add_action( 'init', array(&$this, 'wp_cron') );
+        // add_action( 'init', array(&$this, 'wp_cron') );
 
         //wp_mail
         add_filter( 'wp_mail', array(&$this, 'wp_mail') );
